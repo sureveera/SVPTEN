@@ -1,0 +1,177 @@
+flowchart LR
+
+%% =====================================================
+%% DATA SOURCES
+%% =====================================================
+subgraph SOURCES["1. Data Sources"]
+    direction TB
+
+    subgraph OPERATIONAL["Operational & Time-Series"]
+        direction TB
+        EDR["EDR<br/>PASON / TATCO"]
+        PTEN["PTEN+<br/>Time-Series Data"]
+        CMS["CMS / TOUR"]
+    end
+
+    subgraph ENTERPRISE["Enterprise & Subsidiary Systems"]
+        direction TB
+        SAP["ERP<br/>SAP"]
+        Subs["Subsidiaries"]
+        Other["Other Structured Sources"]
+    end
+
+    subgraph UNSTRUCTURED["Documents & Metadata"]
+        direction TB
+        Manuals["Control Manuals"]
+        Reports["PDFs & Field Reports"]
+        CortexKey["CortexKey Metadata"]
+    end
+end
+
+%% =====================================================
+%% INGESTION
+%% =====================================================
+subgraph INGEST["2. Data Ingestion"]
+    direction TB
+    Snowpipe["Snowpipe Streaming"]
+    Fivetran["Fivetran / Airbyte"]
+end
+
+%% =====================================================
+%% SNOWFLAKE DATA PLATFORM
+%% =====================================================
+subgraph PLATFORM["3. Snowflake Data & AI Platform"]
+    direction LR
+
+    subgraph STORAGE["Data Storage Layers"]
+        direction TB
+        Bronze["Bronze / Raw Zone"]
+        Silver["Silver / Curated Zone"]
+        Gold["Gold Zone<br/>Data Products / Sharing / Iceberg"]
+    end
+
+    subgraph PROCESSING["Transformation & Processing"]
+        direction TB
+        dbt["dbt Transformation Engine"]
+        Calc["Calculation Engine"]
+    end
+
+    subgraph INTELLIGENCE["Semantic & AI Services"]
+        direction TB
+        Semantic["Semantic & Information Delivery Layer"]
+        Cortex["Snowflake Cortex AI"]
+        Databricks["Databricks / External LLMs"]
+    end
+end
+
+%% =====================================================
+%% CONSUMPTION
+%% =====================================================
+subgraph CONSUMERS["4. Data & AI Consumers"]
+    direction TB
+    BI["Reporting & BI"]
+    NLQ["Natural-Language Query<br/>Chatbots"]
+    Biz["Business Users"]
+    DS["Data Scientists"]
+    AIApps["AI Applications"]
+end
+
+%% =====================================================
+%% GOVERNANCE & OPERATIONS
+%% =====================================================
+subgraph SUPPORT["Cross-Cutting Governance & Operations"]
+    direction LR
+    Okta["Okta<br/>Identity & SSO"]
+    Horizon["Security, Governance<br/>& Snowflake Horizon"]
+    CI["CI/CD Pipelines"]
+    Obs["Monitoring & Observability"]
+    Orch["Workflow Orchestration<br/>Airflow"]
+end
+
+%% =====================================================
+%% SOURCE-TO-INGESTION FLOWS
+%% =====================================================
+EDR --> Snowpipe
+PTEN --> Snowpipe
+CMS --> Fivetran
+
+SAP --> Fivetran
+Subs --> Fivetran
+Other --> Fivetran
+
+Manuals --> Snowpipe
+Reports --> Snowpipe
+CortexKey --> Fivetran
+
+%% =====================================================
+%% DATA PROCESSING FLOWS
+%% =====================================================
+Snowpipe --> Bronze
+Fivetran --> Bronze
+
+Bronze --> dbt
+dbt --> Calc
+Calc --> Silver
+
+Silver --> Gold
+Silver --> Semantic
+
+%% =====================================================
+%% AI & ANALYTICS FLOWS
+%% =====================================================
+Gold --> Databricks
+Semantic --> Cortex
+
+Semantic --> BI
+Semantic --> NLQ
+Semantic --> Biz
+
+Gold --> DS
+Databricks --> DS
+Cortex --> AIApps
+Gold --> AIApps
+
+%% =====================================================
+%% GOVERNANCE & OPERATIONS CONNECTIONS
+%% =====================================================
+Okta -. Auth .-> PLATFORM
+Okta -. Auth .-> CONSUMERS
+Horizon -. Governance .-> Bronze
+Horizon -. Governance .-> Silver
+Horizon -. Governance .-> Gold
+Horizon -. Governance .-> Semantic
+Horizon -. Governance .-> Cortex
+
+CI -. Deployment .-> dbt
+CI -. Deployment .-> Calc
+CI -. Deployment .-> Cortex
+
+Obs -. Monitoring .-> Snowpipe
+Obs -. Monitoring .-> Fivetran
+Obs -. Monitoring .-> Bronze
+Obs -. Monitoring .-> Silver
+Obs -. Monitoring .-> Gold
+
+Orch -. Scheduling .-> Snowpipe
+Orch -. Scheduling .-> Fivetran
+Orch -. Scheduling .-> dbt
+Orch -. Scheduling .-> Calc
+
+%% =====================================================
+%% STYLING
+%% =====================================================
+classDef source fill:#E8F1FB,stroke:#2563EB,stroke-width:1px,color:#172554
+classDef ingest fill:#FFF4E5,stroke:#EA580C,stroke-width:1px,color:#7C2D12
+classDef storage fill:#E8F7EE,stroke:#16A34A,stroke-width:1px,color:#14532D
+classDef processing fill:#F3E8FF,stroke:#9333EA,stroke-width:1px,color:#581C87
+classDef intelligence fill:#FCE7F3,stroke:#DB2777,stroke-width:1px,color:#831843
+classDef consumer fill:#E0F2FE,stroke:#0284C7,stroke-width:1px,color:#0C4A6E
+classDef support fill:#F3F4F6,stroke:#4B5563,stroke-width:1px,color:#111827
+
+class EDR,PTEN,CMS,SAP,Subs,Other,Manuals,Reports,CortexKey source
+class Snowpipe,Fivetran ingest
+class Bronze,Silver,Gold storage
+class dbt,Calc processing
+class Semantic,Cortex,Databricks intelligence
+class BI,NLQ,Biz,DS,AIApps consumer
+class Horizon,CI,Obs,Orch,Okta support
