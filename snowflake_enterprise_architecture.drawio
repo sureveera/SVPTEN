@@ -1,413 +1,443 @@
 <mxfile host="app.diagrams.net" agent="Antigravity">
-  <diagram id="svpten-arch-v3" name="SVPTEN Snowflake Enterprise Architecture">
-    <mxGraphModel dx="1920" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1200" math="0" shadow="0">
+  <diagram id="svpten-v1" name="Snowflake Enterprise Architecture">
+    <mxGraphModel dx="1920" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <!-- ============================================================ -->
-        <!-- GOVERNANCE BANNER (TOP) -->
-        <!-- ============================================================ -->
-        <mxCell id="gov" parent="1" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=30;horizontal=1;fontStyle=1;fontSize=13;strokeWidth=2;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E3A8A;collapsible=0;"
-          value="✦  Governance, Security &amp; Operations  ✦">
+        
+        
+        
+        <mxCell id="gov"
+          parent="1" vertex="1"
+          style="swimlane;startSize=30;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;collapsible=0;rounded=1;arcSize=2;"
+          value="Governance, Security &amp; Operations">
           <mxGeometry x="30" y="30" width="2340" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="okta" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
+
+        <mxCell id="g_okta" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
           value="Okta SSO&#xa;Identity &amp; Access">
-          <mxGeometry x="20" y="45" width="160" height="60" as="geometry" />
+          <mxGeometry x="10" y="40" width="160" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="horizon" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="Snowflake Horizon&#xa;Governance &amp; Compliance">
-          <mxGeometry x="200" y="45" width="200" height="60" as="geometry" />
+
+        <mxCell id="g_horizon" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Snowflake Horizon&#xa;Governance &amp; Lineage">
+          <mxGeometry x="185" y="40" width="185" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="cicd" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="CI/CD &amp; IaC&#xa;(dbt Cloud / Terraform)">
-          <mxGeometry x="420" y="45" width="200" height="60" as="geometry" />
+
+        <mxCell id="g_cicd" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="CI/CD &amp; IaC&#xa;dbt Cloud / Terraform">
+          <mxGeometry x="385" y="40" width="185" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="obs" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="Monitoring &amp; Observability&#xa;(Cost / Query Health)">
-          <mxGeometry x="640" y="45" width="200" height="60" as="geometry" />
+
+        <mxCell id="g_obs" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Monitoring &amp; Observability&#xa;Cost / Query Health">
+          <mxGeometry x="585" y="40" width="185" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="orch" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="Orchestration&#xa;(Airflow / Tasks)">
-          <mxGeometry x="860" y="45" width="180" height="60" as="geometry" />
+
+        <mxCell id="g_orch" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Orchestration&#xa;Airflow / Snowflake Tasks">
+          <mxGeometry x="785" y="40" width="185" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="tagging" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
+
+        <mxCell id="g_rbac" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="RBAC &amp; Data Masking&#xa;Row Access Policies">
+          <mxGeometry x="985" y="40" width="185" height="65" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g_enc" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Encryption &amp; Network&#xa;AES-256 / Private Link">
+          <mxGeometry x="1185" y="40" width="185" height="65" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g_audit" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Audit &amp; Compliance&#xa;SOC2 / ISO27001 / HIPAA">
+          <mxGeometry x="1385" y="40" width="185" height="65" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g_timetrav" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
+          value="Time Travel &amp; Fail-safe&#xa;Business Continuity">
+          <mxGeometry x="1585" y="40" width="185" height="65" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g_tagging" parent="gov" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;whiteSpace=wrap;"
           value="Data Classification&#xa;&amp; Tagging">
-          <mxGeometry x="1060" y="45" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="masking" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="Dynamic Data Masking&#xa;&amp; Row Access Policy">
-          <mxGeometry x="1260" y="45" width="210" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="lineage" parent="gov" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=11;fontStyle=1;"
-          value="Data Lineage&#xa;&amp; Access History">
-          <mxGeometry x="1490" y="45" width="180" height="60" as="geometry" />
+          <mxGeometry x="1785" y="40" width="185" height="65" as="geometry" />
         </mxCell>
 
-        <!-- ============================================================ -->
-        <!-- 1. ENTERPRISE DATA SOURCES -->
-        <!-- ============================================================ -->
-        <mxCell id="sources" parent="1" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=30;horizontal=1;fontStyle=1;fontSize=13;strokeWidth=2;fillColor=#F0FDF4;strokeColor=#16A34A;fontColor=#14532D;collapsible=0;"
+
+        
+        
+        
+        <mxCell id="sources"
+          parent="1" vertex="1"
+          style="swimlane;startSize=30;horizontal=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;collapsible=0;rounded=1;arcSize=2;"
           value="1. Enterprise Data Sources">
-          <mxGeometry x="30" y="190" width="300" height="680" as="geometry" />
-        </mxCell>
-        <mxCell id="op_src" parent="sources" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;"
-          value="&lt;b&gt;Operational &amp; Time-Series&lt;/b&gt;&#xa;EDR (PASON / TATCO)&#xa;PTEN+ Time-Series&#xa;CMS / TOUR">
-          <mxGeometry x="20" y="50" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ent_src" parent="sources" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;"
-          value="&lt;b&gt;Enterprise Applications&lt;/b&gt;&#xa;SAP ERP&#xa;Subsidiary Systems&#xa;Other Structured Sources">
-          <mxGeometry x="20" y="180" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="doc_src" parent="sources" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;"
-          value="&lt;b&gt;Documents &amp; Unstructured&lt;/b&gt;&#xa;Control Manuals&#xa;PDFs &amp; Field Reports&#xa;CortexKey Metadata">
-          <mxGeometry x="20" y="310" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ext_src" parent="sources" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontSize=11;"
-          value="&lt;b&gt;External &amp; Marketplace Data&lt;/b&gt;&#xa;Weather / Economic Feeds&#xa;Snowflake Marketplace">
-          <mxGeometry x="20" y="440" width="260" height="80" as="geometry" />
+          <mxGeometry x="30" y="190" width="290" height="640" as="geometry" />
         </mxCell>
 
-        <!-- ============================================================ -->
-        <!-- 2. INGESTION & INTEGRATION -->
-        <!-- ============================================================ -->
-        <mxCell id="ingestion" parent="1" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=30;horizontal=1;fontStyle=1;fontSize=13;strokeWidth=2;fillColor=#FFF7ED;strokeColor=#EA580C;fontColor=#7C2D12;collapsible=0;"
+        <mxCell id="s_ops" parent="sources" vertex="1"
+          style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;"
+          value="Operational &amp; Time-Series&#xa;&#xa;EDR (PASON / TATCO)&#xa;PTEN+ Time-Series&#xa;CMS / TOUR">
+          <mxGeometry x="15" y="50" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s_ent" parent="sources" vertex="1"
+          style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;"
+          value="Enterprise Applications&#xa;&#xa;SAP ERP&#xa;Subsidiary Systems&#xa;Structured Sources">
+          <mxGeometry x="15" y="175" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s_doc" parent="sources" vertex="1"
+          style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;"
+          value="Documents &amp; Unstructured&#xa;&#xa;Control Manuals / PDFs&#xa;Field Reports&#xa;CortexKey Metadata">
+          <mxGeometry x="15" y="300" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s_ext" parent="sources" vertex="1"
+          style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;"
+          value="External &amp; Market Data&#xa;&#xa;Weather / Economic Feeds&#xa;Snowflake Marketplace">
+          <mxGeometry x="15" y="425" width="260" height="90" as="geometry" />
+        </mxCell>
+
+
+        
+        
+        
+        <mxCell id="ingestion"
+          parent="1" vertex="1"
+          style="swimlane;startSize=30;horizontal=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=12;collapsible=0;rounded=1;arcSize=2;"
           value="2. Ingestion &amp; Integration">
-          <mxGeometry x="360" y="190" width="260" height="680" as="geometry" />
-        </mxCell>
-        <mxCell id="kafka" parent="ingestion" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#7C2D12;fontSize=11;"
-          value="&lt;b&gt;Kafka / Confluent&lt;/b&gt;&#xa;Streaming Buffer &amp;&#xa;Schema Registry">
-          <mxGeometry x="20" y="50" width="220" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="snowpipe" parent="ingestion" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#7C2D12;fontSize=11;"
-          value="&lt;b&gt;Snowpipe Streaming&lt;/b&gt;&#xa;Micro-batch &amp; Continuous&#xa;Row-level Ingestion">
-          <mxGeometry x="20" y="155" width="220" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="fivetran" parent="ingestion" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#7C2D12;fontSize=11;"
-          value="&lt;b&gt;Fivetran / Airbyte&lt;/b&gt;&#xa;Batch ELT &amp; CDC&#xa;200+ Connectors">
-          <mxGeometry x="20" y="260" width="220" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="stages" parent="ingestion" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#7C2D12;fontSize=11;"
-          value="&lt;b&gt;Snowflake Stages&lt;/b&gt;&#xa;Internal / External Stages&#xa;(S3 / ADLS / GCS)">
-          <mxGeometry x="20" y="365" width="220" height="75" as="geometry" />
+          <mxGeometry x="350" y="190" width="290" height="640" as="geometry" />
         </mxCell>
 
-        <!-- ============================================================ -->
-        <!-- 3. SNOWFLAKE ENTERPRISE DATA PLATFORM -->
-        <!-- ============================================================ -->
-        <mxCell id="platform" parent="1" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=30;horizontal=1;fontStyle=1;fontSize=13;strokeWidth=2;fillColor=#FAFAFA;strokeColor=#6366F1;fontColor=#3730A3;collapsible=0;"
+        
+        <mxCell id="streaming_box" parent="ingestion" vertex="1"
+          style="swimlane;startSize=22;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=2;fontSize=9;collapsible=0;rounded=1;arcSize=3;"
+          value="Streaming Ingestion Path">
+          <mxGeometry x="15" y="50" width="260" height="185" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i_kafka" parent="streaming_box" vertex="1"
+          style="rounded=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;"
+          value="Kafka / Confluent&#xa;Streaming buffer&#xa;Schema Registry">
+          <mxGeometry x="10" y="30" width="240" height="65" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="sep_line" parent="streaming_box" vertex="1"
+          style="line;strokeColor=#d6b656;strokeWidth=1;dashed=1;fillColor=none;"
+          value="">
+          <mxGeometry x="10" y="102" width="240" height="8" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i_snowpipe" parent="streaming_box" vertex="1"
+          style="rounded=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;"
+          value="Snowpipe Streaming&#xa;Micro-batch / continuous&#xa;Row-level ingestion">
+          <mxGeometry x="10" y="110" width="240" height="65" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i_batch" parent="ingestion" vertex="1"
+          style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;"
+          value="Batch / CDC&#xa;Fivetran / Airbyte&#xa;200+ connectors, full + incremental">
+          <mxGeometry x="15" y="255" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i_stages" parent="ingestion" vertex="1"
+          style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;"
+          value="Snowflake Stages (Snowpipe)&#xa;Internal / External Stages&#xa;S3 / ADLS / GCS auto-ingest">
+          <mxGeometry x="15" y="355" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i_mkt" parent="ingestion" vertex="1"
+          style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;"
+          value="Snowflake Marketplace&#xa;Live third-party datasets&#xa;Zero-ETL acquisition">
+          <mxGeometry x="15" y="455" width="260" height="75" as="geometry" />
+        </mxCell>
+
+
+        
+        
+        
+        <mxCell id="platform"
+          parent="1" vertex="1"
+          style="swimlane;startSize=30;horizontal=1;fillColor=#f5f5f5;strokeColor=#9673a6;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=2;"
           value="3. Snowflake Enterprise Data Platform">
-          <mxGeometry x="650" y="190" width="1090" height="680" as="geometry" />
+          <mxGeometry x="670" y="190" width="1060" height="640" as="geometry" />
         </mxCell>
 
-        <!-- Sub-columns inside platform -->
-        <!-- Col A: Data Lakehouse (Medallion) -->
-        <mxCell id="col_lakehouse" parent="platform" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=24;horizontal=1;fontStyle=1;fontSize=11;strokeWidth=1.5;fillColor=#F0FDF4;strokeColor=#16A34A;fontColor=#14532D;collapsible=0;"
+        
+        <mxCell id="col_lake"
+          parent="platform" vertex="1"
+          style="swimlane;startSize=26;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=10;collapsible=0;rounded=1;arcSize=3;"
           value="Data Lakehouse (Medallion)">
-          <mxGeometry x="10" y="40" width="240" height="620" as="geometry" />
-        </mxCell>
-        <mxCell id="raw" parent="col_lakehouse" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontSize=10;fontStyle=1;"
-          value="🥉  Bronze / Raw Landing&#xa;VARIANT &amp; Semi-structured&#xa;Transient tables, Streams">
-          <mxGeometry x="15" y="35" width="210" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="standard" parent="col_lakehouse" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBF7D0;strokeColor=#16A34A;fontColor=#14532D;fontSize=10;fontStyle=1;"
-          value="🥈  Silver / Staging &amp; Conformed&#xa;Cleaned, deduplicated&#xa;Relational schemas, SCD">
-          <mxGeometry x="15" y="165" width="210" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="curated" parent="col_lakehouse" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#86EFAC;strokeColor=#16A34A;fontColor=#14532D;fontSize=10;fontStyle=1;"
-          value="🥇  Gold / Data Access Marts&#xa;Star-schema, Kimball&#xa;Business-ready DAL">
-          <mxGeometry x="15" y="295" width="210" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="iceberg" parent="col_lakehouse" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4ADE80;strokeColor=#15803D;fontColor=#14532D;fontSize=10;fontStyle=1;"
-          value="🏔  Apache Iceberg Tables&#xa;Open Lakehouse Format&#xa;Zero-copy external access">
-          <mxGeometry x="15" y="430" width="210" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="marketplace" parent="col_lakehouse" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=10;"
-          value="Snowflake Marketplace&#xa;Live data imports">
-          <mxGeometry x="15" y="527" width="210" height="55" as="geometry" />
+          <mxGeometry x="10" y="38" width="310" height="585" as="geometry" />
         </mxCell>
 
-        <!-- Col B: Transformation & Orchestration -->
-        <mxCell id="col_transform" parent="platform" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=24;horizontal=1;fontStyle=1;fontSize=11;strokeWidth=1.5;fillColor=#FAF5FF;strokeColor=#9333EA;fontColor=#581C87;collapsible=0;"
+        <mxCell id="l_bronze" parent="col_lake" vertex="1"
+          style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;fontStyle=1;"
+          value="BRONZE  /  Raw Landing&#xa;VARIANT + semi-structured data&#xa;Transient tables, raw Streams">
+          <mxGeometry x="15" y="38" width="280" height="85" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l_silver" parent="col_lake" vertex="1"
+          style="rounded=1;fillColor=#97d077;strokeColor=#82b366;fontSize=10;whiteSpace=wrap;fontStyle=1;"
+          value="SILVER  /  Staging &amp; Conformed&#xa;Cleaned, deduplicated, relational&#xa;Type-2 SCD, standard schemas">
+          <mxGeometry x="15" y="173" width="280" height="85" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l_gold" parent="col_lake" vertex="1"
+          style="rounded=1;fillColor=#67ab9f;strokeColor=#006EAF;fontColor=#ffffff;fontSize=10;whiteSpace=wrap;fontStyle=1;"
+          value="GOLD  /  Data Access Marts&#xa;Star-schema, Kimball dims + facts&#xa;Business-ready DAL">
+          <mxGeometry x="15" y="308" width="280" height="85" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l_iceberg" parent="col_lake" vertex="1"
+          style="rounded=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;fontSize=10;whiteSpace=wrap;fontStyle=1;"
+          value="Apache Iceberg Tables&#xa;Open lakehouse format&#xa;Zero-copy sharing with external engines">
+          <mxGeometry x="15" y="443" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="col_transform"
+          parent="platform" vertex="1"
+          style="swimlane;startSize=26;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=10;collapsible=0;rounded=1;arcSize=3;"
           value="Transformation &amp; Orchestration">
-          <mxGeometry x="270" y="40" width="260" height="620" as="geometry" />
-        </mxCell>
-        <mxCell id="dyn_tables" parent="col_transform" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#9333EA;fontColor=#581C87;fontSize=10;"
-          value="&lt;b&gt;Streams &amp; Dynamic Tables&lt;/b&gt;&#xa;Declarative real-time pipeline&#xa;Auto-refresh, incremental">
-          <mxGeometry x="15" y="35" width="230" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="dbt" parent="col_transform" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontColor=#4C1D95;fontSize=10;"
-          value="&lt;b&gt;dbt Pipeline Orchestrator&lt;/b&gt;&#xa;SQL model compilation&#xa;Pushdown to Snowflake WH&#xa;Tests, docs &amp; lineage">
-          <mxGeometry x="15" y="140" width="230" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="snowpark" parent="col_transform" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#9333EA;fontColor=#581C87;fontSize=10;"
-          value="&lt;b&gt;Snowpark (Python / Java)&lt;/b&gt;&#xa;Advanced compute&#xa;ML pipelines, UDFs&#xa;Feature engineering">
-          <mxGeometry x="15" y="265" width="230" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="stored_procs" parent="col_transform" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#9333EA;fontColor=#581C87;fontSize=10;"
-          value="&lt;b&gt;Stored Procedures&lt;/b&gt;&#xa;Business calculation engines&#xa;Procedural logic in Snowflake">
-          <mxGeometry x="15" y="390" width="230" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="wh_mgmt" parent="col_transform" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#9333EA;fontColor=#581C87;fontSize=10;"
-          value="&lt;b&gt;Virtual Warehouse Mgmt&lt;/b&gt;&#xa;Multi-cluster auto-scale&#xa;Cost &amp; concurrency control">
-          <mxGeometry x="15" y="497" width="230" height="75" as="geometry" />
+          <mxGeometry x="335" y="38" width="310" height="585" as="geometry" />
         </mxCell>
 
-        <!-- Col C: Semantic, AI & Sharing -->
-        <mxCell id="col_serve" parent="platform" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=24;horizontal=1;fontStyle=1;fontSize=11;strokeWidth=1.5;fillColor=#FFF1F2;strokeColor=#E11D48;fontColor=#881337;collapsible=0;"
+        <mxCell id="t_dyntables" parent="col_transform" vertex="1"
+          style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;whiteSpace=wrap;"
+          value="Streams &amp; Dynamic Tables&#xa;Declarative near-real-time pipeline&#xa;Auto-refresh, incremental">
+          <mxGeometry x="15" y="38" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t_dbt" parent="col_transform" vertex="1"
+          style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;whiteSpace=wrap;fontStyle=1;"
+          value="dbt Orchestrator&#xa;Compiles SQL models&#xa;Pushes execution to Snowflake WH&#xa;Tests, docs &amp; lineage built-in">
+          <mxGeometry x="15" y="158" width="280" height="95" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t_snowpark" parent="col_transform" vertex="1"
+          style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;whiteSpace=wrap;"
+          value="Snowpark  (Python / Java)&#xa;Advanced compute + ML pipelines&#xa;Feature engineering, UDFs&#xa;In-warehouse Python execution">
+          <mxGeometry x="15" y="303" width="280" height="95" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t_procs" parent="col_transform" vertex="1"
+          style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;whiteSpace=wrap;"
+          value="Stored Procedures &amp; Tasks&#xa;Scheduled business logic&#xa;Procedural in-warehouse compute">
+          <mxGeometry x="15" y="448" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="col_serve"
+          parent="platform" vertex="1"
+          style="swimlane;startSize=26;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=10;collapsible=0;rounded=1;arcSize=3;"
           value="Serving, AI &amp; Sharing">
-          <mxGeometry x="550" y="40" width="260" height="620" as="geometry" />
-        </mxCell>
-        <mxCell id="semantic" parent="col_serve" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontColor=#881337;fontSize=10;"
-          value="&lt;b&gt;Semantic &amp; Metric Store&lt;/b&gt;&#xa;Snowflake Semantic Model&#xa;Governed KPI definitions&#xa;BI-agnostic metric layer">
-          <mxGeometry x="15" y="35" width="230" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="cortex" parent="col_serve" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontColor=#881337;fontSize=10;"
-          value="&lt;b&gt;Snowflake Cortex AI&lt;/b&gt;&#xa;LLM functions (COMPLETE, CLASSIFY)&#xa;Cortex Search (vector RAG)&#xa;Cortex Analyst (NL2SQL)">
-          <mxGeometry x="15" y="165" width="230" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="sharing" parent="col_serve" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontColor=#881337;fontSize=10;"
-          value="&lt;b&gt;Secure Sharing &amp; Native Apps&lt;/b&gt;&#xa;Zero-copy data sharing&#xa;Native Application Framework&#xa;Snowflake Marketplace">
-          <mxGeometry x="15" y="295" width="230" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ml_ops" parent="col_serve" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontColor=#881337;fontSize=10;"
-          value="&lt;b&gt;ML Ops (Model Registry)&lt;/b&gt;&#xa;Train / deploy / monitor&#xa;Feature Store in Snowflake">
-          <mxGeometry x="15" y="420" width="230" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="sandbox" parent="col_serve" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontColor=#881337;fontSize=10;"
-          value="&lt;b&gt;Data Sharing / Sandbox&lt;/b&gt;&#xa;Databricks Iceberg reader&#xa;Zero-copy collaboration">
-          <mxGeometry x="15" y="527" width="230" height="55" as="geometry" />
+          <mxGeometry x="660" y="38" width="385" height="585" as="geometry" />
         </mxCell>
 
-        <!-- Col D: Security & Trust (vertical right column) -->
-        <mxCell id="col_security" parent="platform" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=24;horizontal=1;fontStyle=1;fontSize=11;strokeWidth=1.5;fillColor=#FFFBEB;strokeColor=#D97706;fontColor=#78350F;collapsible=0;"
-          value="Security &amp; Trust">
-          <mxGeometry x="830" y="40" width="245" height="620" as="geometry" />
-        </mxCell>
-        <mxCell id="rbac" parent="col_security" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=10;"
-          value="&lt;b&gt;RBAC &amp; Object-level Security&lt;/b&gt;&#xa;Role hierarchy, grants&#xa;Column-level permissions">
-          <mxGeometry x="15" y="35" width="215" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="net_policy" parent="col_security" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=10;"
-          value="&lt;b&gt;Network Policies&lt;/b&gt;&#xa;IP allowlisting&#xa;Private Link (AWS/Azure/GCP)">
-          <mxGeometry x="15" y="145" width="215" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="encryption" parent="col_security" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=10;"
-          value="&lt;b&gt;Encryption&lt;/b&gt;&#xa;AES-256 at rest &amp; in transit&#xa;Tri-Secret Secure (BYOK)">
-          <mxGeometry x="15" y="250" width="215" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="audit" parent="col_security" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=10;"
-          value="&lt;b&gt;Audit &amp; Compliance&lt;/b&gt;&#xa;ACCESS_HISTORY view&#xa;SOC 2 / ISO 27001 / HIPAA">
-          <mxGeometry x="15" y="355" width="215" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="dr" parent="col_security" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=10;"
-          value="&lt;b&gt;Business Continuity&lt;/b&gt;&#xa;Fail-safe (7-day)&#xa;Time Travel (0-90 days)">
-          <mxGeometry x="15" y="460" width="215" height="75" as="geometry" />
+        <mxCell id="v_semantic" parent="col_serve" vertex="1"
+          style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;"
+          value="Semantic &amp; Metric Store&#xa;Snowflake Semantic Model&#xa;Governed KPI definitions&#xa;BI-agnostic metric layer">
+          <mxGeometry x="15" y="38" width="355" height="90" as="geometry" />
         </mxCell>
 
-        <!-- ============================================================ -->
-        <!-- 4. CONSUMPTION & INTEROPERABILITY -->
-        <!-- ============================================================ -->
-        <mxCell id="consumption" parent="1" vertex="1"
-          style="swimlane;html=1;rounded=1;arcSize=3;startSize=30;horizontal=1;fontStyle=1;fontSize=13;strokeWidth=2;fillColor=#EFF6FF;strokeColor=#0284C7;fontColor=#0C4A6E;collapsible=0;"
+        <mxCell id="v_cortex" parent="col_serve" vertex="1"
+          style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;"
+          value="Snowflake Cortex AI&#xa;LLM functions (COMPLETE, CLASSIFY)&#xa;Cortex Search  (vector / RAG)&#xa;Cortex Analyst  (NL to SQL)">
+          <mxGeometry x="15" y="178" width="355" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v_share" parent="col_serve" vertex="1"
+          style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;"
+          value="Secure Sharing &amp; Native Apps&#xa;Zero-copy data sharing&#xa;Native Application Framework&#xa;Snowflake Marketplace publishing">
+          <mxGeometry x="15" y="318" width="355" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v_mlops" parent="col_serve" vertex="1"
+          style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;"
+          value="ML Ops &amp; Model Registry&#xa;Train / deploy / monitor models&#xa;Feature Store in Snowflake">
+          <mxGeometry x="15" y="458" width="355" height="85" as="geometry" />
+        </mxCell>
+
+
+        
+        
+        
+        <mxCell id="consumption"
+          parent="1" vertex="1"
+          style="swimlane;startSize=30;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;collapsible=0;rounded=1;arcSize=2;"
           value="4. Consumption &amp; Interoperability">
-          <mxGeometry x="1770" y="190" width="290" height="680" as="geometry" />
-        </mxCell>
-        <mxCell id="analytics_bi" parent="consumption" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=11;"
-          value="&lt;b&gt;Analytics &amp; BI&lt;/b&gt;&#xa;Power BI / Tableau&#xa;Sigma / Looker&#xa;Business Stakeholders">
-          <mxGeometry x="15" y="50" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="ai_apps" parent="consumption" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=11;"
-          value="&lt;b&gt;AI Experiences&lt;/b&gt;&#xa;NL Analytics (Cortex Analyst)&#xa;AI-powered applications&#xa;Custom LLM interfaces">
-          <mxGeometry x="15" y="180" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="data_science" parent="consumption" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=11;"
-          value="&lt;b&gt;Data Science &amp; ML&lt;/b&gt;&#xa;Python notebooks (Snowflake)&#xa;Feature stores &amp; model runs">
-          <mxGeometry x="15" y="310" width="260" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="interop" parent="consumption" vertex="1"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=11;"
-          value="&lt;b&gt;Interoperability&lt;/b&gt;&#xa;Databricks via Iceberg&#xa;Spark / dbt / external engines">
-          <mxGeometry x="15" y="430" width="260" height="80" as="geometry" />
+          <mxGeometry x="1760" y="190" width="295" height="640" as="geometry" />
         </mxCell>
 
-        <!-- ============================================================ -->
-        <!-- DATA FLOW EDGES -->
-        <!-- ============================================================ -->
-        <!-- Sources → Ingestion -->
-        <mxCell id="e_op_kafka" edge="1" parent="1" source="op_src" target="kafka"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#EA580C;endArrow=block;endFill=1;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="c_bi" parent="consumption" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;whiteSpace=wrap;"
+          value="Analytics &amp; BI&#xa;&#xa;Power BI / Tableau / Sigma&#xa;Looker / Business users">
+          <mxGeometry x="15" y="50" width="265" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="e_ent_fivetran" edge="1" parent="1" source="ent_src" target="fivetran"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#EA580C;endArrow=block;endFill=1;">
-          <mxGeometry relative="1" as="geometry" />
+
+        <mxCell id="c_ai" parent="consumption" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;whiteSpace=wrap;"
+          value="AI Experiences&#xa;&#xa;Cortex Analyst NL queries&#xa;AI-powered applications">
+          <mxGeometry x="15" y="175" width="265" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="e_doc_stages" edge="1" parent="1" source="doc_src" target="stages"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#EA580C;endArrow=block;endFill=1;">
-          <mxGeometry relative="1" as="geometry" />
+
+        <mxCell id="c_ds" parent="consumption" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;whiteSpace=wrap;"
+          value="Data Science &amp; ML&#xa;&#xa;Snowflake Notebooks (Python)&#xa;Feature stores &amp; model runs">
+          <mxGeometry x="15" y="295" width="265" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="e_ext_marketplace" edge="1" parent="1" source="ext_src" target="marketplace"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#EA580C;endArrow=block;endFill=1;">
+
+        <mxCell id="c_interop" parent="consumption" vertex="1"
+          style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;whiteSpace=wrap;"
+          value="Interoperability&#xa;&#xa;Databricks via Iceberg reader&#xa;External query engines / Spark">
+          <mxGeometry x="15" y="415" width="265" height="90" as="geometry" />
+        </mxCell>
+
+
+        
+        
+        
+
+        
+        <mxCell id="e1" edge="1" parent="1" source="s_ops" target="streaming_box"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Kafka → Snowpipe -->
-        <mxCell id="e_kafka_snowpipe" edge="1" parent="1" source="kafka" target="snowpipe"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#EA580C;endArrow=block;endFill=1;">
+        <mxCell id="e2" edge="1" parent="1" source="s_ent" target="i_batch"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Ingestion → Bronze -->
-        <mxCell id="e_ingest_raw" edge="1" parent="1" source="ingestion" target="raw"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#16A34A;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+        <mxCell id="e3" edge="1" parent="1" source="s_doc" target="i_stages"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Bronze → Silver (direct & via Dynamic Tables) -->
-        <mxCell id="e_raw_std" edge="1" parent="1" source="raw" target="standard"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#16A34A;endArrow=block;endFill=1;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_raw_dyn" edge="1" parent="1" source="raw" target="dyn_tables"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9333EA;endArrow=block;endFill=1;dashed=0;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_dyn_std" edge="1" parent="1" source="dyn_tables" target="standard"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9333EA;endArrow=block;endFill=1;">
+        <mxCell id="e4" edge="1" parent="1" source="s_ext" target="i_mkt"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Silver → Gold (direct & via Snowpark) -->
-        <mxCell id="e_std_cur" edge="1" parent="1" source="standard" target="curated"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#16A34A;endArrow=block;endFill=1;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_std_sp" edge="1" parent="1" source="standard" target="snowpark"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9333EA;endArrow=block;endFill=1;dashed=0;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_sp_cur" edge="1" parent="1" source="snowpark" target="curated"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9333EA;endArrow=block;endFill=1;">
+        
+        <mxCell id="e5" edge="1" parent="1" source="i_snowpipe" target="l_bronze"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- dbt pushdown control arrow -->
-        <mxCell id="e_dbt_push" edge="1" parent="1" source="dbt" target="col_lakehouse"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#7C3AED;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;"
+        <mxCell id="e6" edge="1" parent="1" source="i_batch" target="l_bronze"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" source="i_stages" target="l_bronze"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e8" edge="1" parent="1" source="i_mkt" target="l_bronze"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=block;endFill=1;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.95;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="e9" edge="1" parent="1" source="l_bronze" target="l_silver"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#82b366;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e10" edge="1" parent="1" source="l_silver" target="l_gold"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#82b366;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e11" edge="1" parent="1" source="l_gold" target="l_iceberg"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#006EAF;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="e12" edge="1" parent="1" source="l_bronze" target="t_dyntables"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e13" edge="1" parent="1" source="l_silver" target="t_snowpark"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="e14" edge="1" parent="1" source="t_dbt" target="col_lake"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=open;endFill=0;dashed=1;dashPattern=6 3;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.55;entryDx=0;entryDy=0;"
           value="SQL Pushdown">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Gold → Iceberg -->
-        <mxCell id="e_cur_ice" edge="1" parent="1" source="curated" target="iceberg"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#16A34A;endArrow=block;endFill=1;">
+        
+        <mxCell id="e15" edge="1" parent="1" source="l_gold" target="v_semantic"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Gold → Semantic -->
-        <mxCell id="e_cur_sem" edge="1" parent="1" source="curated" target="semantic"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#E11D48;endArrow=block;endFill=1;">
+        <mxCell id="e16" edge="1" parent="1" source="l_gold" target="v_cortex"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#b85450;endArrow=block;endFill=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Gold → Cortex -->
-        <mxCell id="e_cur_cortex" edge="1" parent="1" source="curated" target="cortex"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#E11D48;endArrow=block;endFill=1;">
+        <mxCell id="e17" edge="1" parent="1" source="l_iceberg" target="v_share"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#b85450;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Iceberg → Sharing -->
-        <mxCell id="e_ice_share" edge="1" parent="1" source="iceberg" target="sharing"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#E11D48;endArrow=block;endFill=1;">
+        
+        <mxCell id="e18" edge="1" parent="1" source="v_semantic" target="c_bi"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#6c8ebf;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Semantic → Analytics BI -->
-        <mxCell id="e_sem_bi" edge="1" parent="1" source="semantic" target="analytics_bi"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#0284C7;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+        <mxCell id="e19" edge="1" parent="1" source="v_cortex" target="c_ai"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#6c8ebf;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Cortex → AI Apps -->
-        <mxCell id="e_cortex_ai" edge="1" parent="1" source="cortex" target="ai_apps"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#0284C7;endArrow=block;endFill=1;">
+        <mxCell id="e20" edge="1" parent="1" source="v_share" target="c_interop"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Sharing → Interop -->
-        <mxCell id="e_share_interop" edge="1" parent="1" source="sharing" target="interop"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#0284C7;endArrow=block;endFill=1;">
+        <mxCell id="e21" edge="1" parent="1" source="v_mlops" target="c_ds"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Snowpark → Data Science -->
-        <mxCell id="e_sp_ds" edge="1" parent="1" source="snowpark" target="data_science"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#0284C7;endArrow=block;endFill=1;">
+        
+        <mxCell id="e22" edge="1" parent="1" source="gov" target="ingestion"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=6 4;exitX=0.12;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Governance → Platform (dashed oversight) -->
-        <mxCell id="e_gov_platform" edge="1" parent="1" source="gov" target="platform"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#3B82F6;endArrow=none;dashed=1;dashPattern=8 4;">
+        <mxCell id="e23" edge="1" parent="1" source="gov" target="platform"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_okta_platform" edge="1" parent="1" source="okta" target="platform"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#3B82F6;endArrow=block;endFill=1;dashed=1;"
-          value="Auth">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_okta_consume" edge="1" parent="1" source="okta" target="consumption"
-          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#3B82F6;endArrow=block;endFill=1;dashed=1;"
-          value="Auth">
+
+        <mxCell id="e24" edge="1" parent="1" source="gov" target="consumption"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=6 4;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
