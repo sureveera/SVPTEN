@@ -64,8 +64,8 @@
         <mxCell id="native" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Streams / Tasks /&lt;br&gt;Dynamic Tables" vertex="1">
           <mxGeometry height="58" width="140" x="860" y="375" as="geometry" />
         </mxCell>
-        <mxCell id="dbt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="dbt Transformation Engine&lt;br&gt;&lt;b&gt;(Bronze -&gt; Silver -&gt; Gold)&lt;/b&gt;" vertex="1">
-          <mxGeometry height="200" width="140" x="860" y="475" as="geometry" />
+        <mxCell id="dbt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="dbt Orchestration Engine&lt;br&gt;&lt;b&gt;(SQL Compilation &amp; Pushdown)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="860" y="490" as="geometry" />
         </mxCell>
         <mxCell id="calc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Calculation Services" vertex="1">
           <mxGeometry height="58" width="140" x="860" y="690" as="geometry" />
@@ -131,16 +131,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9" edge="1" parent="1" source="raw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="dbt">
+        <mxCell id="e9" edge="1" parent="1" source="raw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="standard">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e10" edge="1" parent="1" source="dbt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="standard">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e10_silver_to_dbt" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="dbt">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e10_dbt_to_gold" edge="1" parent="1" source="dbt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="curated">
+        <mxCell id="e10" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="curated">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e11" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="calc">
@@ -177,6 +171,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_okta_consume" edge="1" parent="1" source="okta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;dashed=1;" target="consumption">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_dbt_pushdown" edge="1" parent="1" source="dbt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;dashed=1;" target="foundation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
