@@ -109,6 +109,9 @@
         <mxCell id="e3" edge="1" parent="1" source="doc_src" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="files">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ingestion" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="e7" edge="1" parent="1" source="raw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="native">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
