@@ -33,6 +33,7 @@ end
 %% =====================================================
 subgraph INGEST["2. Data Ingestion"]
     direction TB
+    Kafka["Apache Kafka / Confluent"]
     Snowpipe["Snowpipe Streaming"]
     Fivetran["Fivetran / Airbyte"]
 end
@@ -91,8 +92,9 @@ end
 %% =====================================================
 %% SOURCE-TO-INGESTION FLOWS
 %% =====================================================
-EDR --> Snowpipe
-PTEN --> Snowpipe
+EDR --> Kafka
+PTEN --> Kafka
+Kafka --> Snowpipe
 CMS --> Fivetran
 
 SAP --> Fivetran
@@ -169,7 +171,7 @@ classDef consumer fill:#E0F2FE,stroke:#0284C7,stroke-width:1px,color:#0C4A6E
 classDef support fill:#F3F4F6,stroke:#4B5563,stroke-width:1px,color:#111827
 
 class EDR,PTEN,CMS,SAP,Subs,Other,Manuals,Reports,CortexKey source
-class Snowpipe,Fivetran ingest
+class Kafka,Snowpipe,Fivetran ingest
 class Bronze,Silver,Gold storage
 class dbt,Calc processing
 class Semantic,Cortex,Databricks intelligence
