@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="svpten-arch" name="SVPTEN Platform Architecture">
+    <mxGraphModel dx="1920" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gov" parent="1" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="Governance, Security &amp;amp; Operations  (Snowflake Horizon)">
+          <mxGeometry x="20" y="20" width="2360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Okta / SAML SSO&amp;#xa;Identity &amp;amp; Access Management">
+          <mxGeometry x="15" y="35" width="175" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Snowflake Horizon&amp;#xa;Data Governance &amp;amp; Lineage">
+          <mxGeometry x="205" y="35" width="195" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="RBAC + Column / Row Policies&amp;#xa;Dynamic Data Masking">
+          <mxGeometry x="415" y="35" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Encryption + Network&amp;#xa;AES-256 / TLS / Private Link">
+          <mxGeometry x="640" y="35" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Audit &amp;amp; Compliance&amp;#xa;ACCESS_HISTORY / SOC2 / ISO27001">
+          <mxGeometry x="865" y="35" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="CI/CD &amp;amp; IaC&amp;#xa;dbt Cloud / Terraform / SchemaChange">
+          <mxGeometry x="1120" y="35" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Monitoring &amp;amp; Observability&amp;#xa;Query Health / Cost Mgmt">
+          <mxGeometry x="1350" y="35" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Enterprise Orchestration&amp;#xa;Apache Airflow / SF Tasks">
+          <mxGeometry x="1580" y="35" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Time Travel (0-90 days)&amp;#xa;Fail-safe (7 days)">
+          <mxGeometry x="1805" y="35" width="195" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Data Classification&amp;#xa;&amp;amp; Object Tagging">
+          <mxGeometry x="2015" y="35" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" parent="gov" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Data Quality&amp;#xa;Alerts + Metric Tables">
+          <mxGeometry x="2210" y="35" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src" parent="1" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="1. Enterprise Data Sources">
+          <mxGeometry x="20" y="165" width="285" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="sops" parent="src" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="Operational / OLTP&amp;#xa;&amp;#xa;Relational DBs, ERP&amp;#xa;CRM, SCADA, IoT sensors">
+          <mxGeometry x="15" y="42" width="255" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sstr" parent="src" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="Streaming / Event Sources&amp;#xa;&amp;#xa;Kafka topics, Kinesis&amp;#xa;Event hubs, Webhooks">
+          <mxGeometry x="15" y="162" width="255" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ssaas" parent="src" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="SaaS Applications&amp;#xa;&amp;#xa;Salesforce, ServiceNow&amp;#xa;NetSuite, Workday">
+          <mxGeometry x="15" y="277" width="255" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="sfiles" parent="src" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="Files / Semi-structured&amp;#xa;&amp;#xa;JSON, Parquet, CSV, XML&amp;#xa;PDFs, Documents">
+          <mxGeometry x="15" y="392" width="255" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="sext" parent="src" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="External &amp;amp; Market Data&amp;#xa;&amp;#xa;Third-party feeds&amp;#xa;Snowflake Marketplace">
+          <mxGeometry x="15" y="507" width="255" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ing" parent="1" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="2. Ingestion &amp;amp; Integration">
+          <mxGeometry x="325" y="165" width="290" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="strm_grp" parent="ing" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=0;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="Streaming Ingestion Path">
+          <mxGeometry x="15" y="42" width="260" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="ikafka" parent="strm_grp" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;fontStyle=0;" value="Kafka / Confluent&amp;#xa;Streaming buffer + Schema Registry&amp;#xa;Topic-per-source pattern">
+          <mxGeometry x="10" y="32" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="strm_grp" vertex="1" style="line;strokeColor=#d6b656;strokeWidth=1;dashed=1;fillColor=none;" value="">
+          <mxGeometry x="10" y="102" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="isnp" parent="strm_grp" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;fontStyle=0;" value="Snowpipe Streaming&amp;#xa;Micro-batch / continuous&amp;#xa;Row-level REST ingestion">
+          <mxGeometry x="10" y="110" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="ibatch" parent="ing" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=0;" value="Batch / CDC ELT&amp;#xa;Fivetran / Airbyte / HVR&amp;#xa;200+ connectors, full + incremental">
+          <mxGeometry x="15" y="245" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="istages" parent="ing" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=0;" value="External Stages (Snowpipe)&amp;#xa;S3 / ADLS / GCS auto-ingest&amp;#xa;Internal stages for small files">
+          <mxGeometry x="15" y="345" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="imkt" parent="ing" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=0;" value="Snowflake Marketplace&amp;#xa;Live third-party datasets&amp;#xa;Zero-ETL data acquisition">
+          <mxGeometry x="15" y="445" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="plat" parent="1" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#f5f5f5;strokeColor=#9673a6;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="3. Snowflake Enterprise Data Platform">
+          <mxGeometry x="635" y="165" width="1085" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="lake" parent="plat" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="Data Lakehouse  (Medallion Architecture)">
+          <mxGeometry x="10" y="36" width="310" height="594" as="geometry" />
+        </mxCell>
+        <mxCell id="lbron" parent="lake" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="BRONZE  /  Raw Landing Zone&amp;#xa;VARIANT + semi-structured as-is&amp;#xa;Transient tables, raw Streams&amp;#xa;Full historical archive">
+          <mxGeometry x="12" y="36" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lsilv" parent="lake" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#97d077;strokeColor=#82b366;fontSize=10;fontStyle=0;" value="SILVER  /  Staging &amp;amp; Conformed&amp;#xa;Cleaned, deduplicated, normalized&amp;#xa;Standard schemas, SCD Type-2&amp;#xa;Enterprise-wide consistent view">
+          <mxGeometry x="12" y="171" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lgold" parent="lake" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#67AB9F;strokeColor=#006EAF;fontSize=10;fontStyle=0;fontColor=#ffffff;fontStyle=1;" value="GOLD  /  Data Access Marts&amp;#xa;Star-schema + Kimball dims/facts&amp;#xa;Business-ready DAL&amp;#xa;Aggregated KPIs and metrics">
+          <mxGeometry x="12" y="306" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lice" parent="lake" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontSize=10;fontStyle=0;fontColor=#ffffff;fontStyle=1;" value="Apache Iceberg Tables  (GA 2024)&amp;#xa;Open lakehouse format&amp;#xa;Snowflake-managed or Polaris catalog&amp;#xa;Zero-copy access by Spark / Trino">
+          <mxGeometry x="12" y="441" width="283" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="trf" parent="plat" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="Transformation &amp;amp; Orchestration">
+          <mxGeometry x="335" y="36" width="310" height="594" as="geometry" />
+        </mxCell>
+        <mxCell id="tdyn" parent="trf" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=0;" value="Streams &amp;amp; Dynamic Tables&amp;#xa;Declarative near-real-time pipeline&amp;#xa;Automatic incremental refresh&amp;#xa;TARGET_LAG driven scheduling">
+          <mxGeometry x="12" y="36" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="tdbt" parent="trf" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5d5ff;strokeColor=#6666aa;fontSize=10;fontStyle=0;" value="dbt  (data build tool)&amp;#xa;SQL model compilation only&amp;#xa;Execution pushed to Snowflake VW&amp;#xa;Built-in tests, docs, lineage">
+          <mxGeometry x="12" y="171" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="tsp" parent="trf" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=0;" value="Snowpark  (Python / Java / Scala)&amp;#xa;Advanced compute inside Snowflake&amp;#xa;ML feature engineering, UDFs&amp;#xa;Snowpark Container Services">
+          <mxGeometry x="12" y="306" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="ttasks" parent="trf" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=0;" value="Stored Procedures &amp;amp; Tasks&amp;#xa;Scheduled procedural logic&amp;#xa;DAG-style task graphs&amp;#xa;Error handling + retries">
+          <mxGeometry x="12" y="441" width="283" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="serve" parent="plat" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="Serving, AI &amp;amp; Sharing">
+          <mxGeometry x="660" y="36" width="405" height="594" as="geometry" />
+        </mxCell>
+        <mxCell id="vsem" parent="serve" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=0;" value="Snowflake Semantic Layer&amp;#xa;Governed metric definitions (semantic views)&amp;#xa;BI-agnostic, single source of truth&amp;#xa;Used by Cortex Analyst + BI tools">
+          <mxGeometry x="12" y="36" width="378" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="vcortex" parent="serve" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=0;" value="Snowflake Cortex AI&amp;#xa;LLM functions: COMPLETE, CLASSIFY, TRANSLATE&amp;#xa;Cortex Search: vector / RAG retrieval&amp;#xa;Cortex Analyst: NL-to-SQL via semantic views">
+          <mxGeometry x="12" y="171" width="378" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="vshare" parent="serve" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=0;" value="Secure Data Sharing &amp;amp; Native Apps&amp;#xa;Zero-copy sharing (no data movement)&amp;#xa;Native Application Framework (listings)&amp;#xa;Snowflake Marketplace publishing">
+          <mxGeometry x="12" y="306" width="378" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="vmlops" parent="serve" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=0;" value="Snowpark ML + Model Registry&amp;#xa;Train / register / deploy models in-platform&amp;#xa;Feature Store, Model Explainability&amp;#xa;Snowpark Container Services for inference">
+          <mxGeometry x="12" y="441" width="378" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="cons" parent="1" vertex="1" style="swimlane;startSize=28;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;collapsible=0;rounded=1;arcSize=2;" value="4. Consumption &amp;amp; Interoperability">
+          <mxGeometry x="1740" y="165" width="290" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="cbi" parent="cons" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Analytics &amp;amp; BI&amp;#xa;&amp;#xa;Power BI / Tableau / Sigma&amp;#xa;Looker / Snowsight dashboards">
+          <mxGeometry x="15" y="42" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cai" parent="cons" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="AI Experiences&amp;#xa;&amp;#xa;Cortex Analyst NL queries&amp;#xa;AI-powered applications&amp;#xa;LLM-augmented workflows">
+          <mxGeometry x="15" y="162" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cds" parent="cons" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Data Science &amp;amp; ML&amp;#xa;&amp;#xa;Snowflake Notebooks (Python)&amp;#xa;External tools via Snowpark">
+          <mxGeometry x="15" y="282" width="260" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="cinterop" parent="cons" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=0;" value="Interoperability&amp;#xa;&amp;#xa;Databricks via Iceberg reader&amp;#xa;Spark / Trino / external engines&amp;#xa;Apache Polaris catalog">
+          <mxGeometry x="15" y="397" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" parent="1" source="sstr" target="strm_grp" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" parent="1" source="sops" target="strm_grp" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.2" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" parent="1" source="ssaas" target="ibatch" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" parent="1" source="sfiles" target="istages" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" source="sext" target="imkt" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" parent="1" source="isnp" target="lbron" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.25" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" source="ibatch" target="lbron" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" parent="1" source="istages" target="lbron" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.75" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" parent="1" source="imkt" target="lbron" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#82b366;endArrow=block;endFill=1;dashed=1;dashPattern=6 3;" exitX="1" exitY="0.5" entryX="0" entryY="0.95" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" parent="1" source="lbron" target="lsilv" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#82b366;endArrow=block;endFill=1;" exitX="0.5" exitY="1" entryX="0.5" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" parent="1" source="lsilv" target="lgold" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2.5;strokeColor=#82b366;endArrow=block;endFill=1;" exitX="0.5" exitY="1" entryX="0.5" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" parent="1" source="lgold" target="lice" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#006EAF;endArrow=block;endFill=1;" exitX="0.5" exitY="1" entryX="0.5" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" parent="1" source="lbron" target="tdyn" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" parent="1" source="lsilv" target="tsp" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" parent="1" source="tdyn" target="lsilv" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;" exitX="0" exitY="0.3" entryX="1" entryY="0.3" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" parent="1" source="tsp" target="lgold" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#9673a6;endArrow=block;endFill=1;" exitX="0" exitY="0.5" entryX="1" entryY="0.7" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c29" parent="1" source="tdbt" target="lake" edge="1" value="SQL Pushdown" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#6666aa;endArrow=block;endFill=1;dashed=1;dashPattern=6 3;" exitX="0" exitY="0.5" entryX="1" entryY="0.55" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c30" parent="1" source="lgold" target="vsem" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;" exitX="1" exitY="0.3" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" parent="1" source="lgold" target="vcortex" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;" exitX="1" exitY="0.7" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" parent="1" source="lice" target="vshare" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#b85450;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.8" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c33" parent="1" source="tsp" target="vmlops" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#b85450;endArrow=block;endFill=1;" exitX="1" exitY="0.8" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c34" parent="1" source="vsem" target="cbi" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#6c8ebf;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c35" parent="1" source="vcortex" target="cai" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#6c8ebf;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c36" parent="1" source="vshare" target="cinterop" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c37" parent="1" source="vmlops" target="cds" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;endArrow=block;endFill=1;" exitX="1" exitY="0.5" entryX="0" entryY="0.5" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c38" parent="1" source="gov" target="ing" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=8 4;" exitX="0.1" exitY="1" entryX="0.5" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c39" parent="1" source="gov" target="plat" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=8 4;" exitX="0.45" exitY="1" entryX="0.3" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c40" parent="1" source="gov" target="cons" edge="1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1;strokeColor=#6c8ebf;endArrow=none;dashed=1;dashPattern=8 4;" exitX="0.9" exitY="1" entryX="0.5" entryY="0" exitDx="0" exitDy="0" entryDx="0" entryDy="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
