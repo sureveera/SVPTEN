@@ -49,34 +49,34 @@
         <mxCell id="serve" parent="1" style="swimlane;html=1;rounded=0;startSize=34;horizontal=1;fontStyle=1;fontSize=14;strokeWidth=1.5;fillColor=#F8FAFC;strokeColor=#64748B;collapsible=0;" value="Data &amp; AI Services" vertex="1">
           <mxGeometry height="530" width="180" x="1035" y="310" as="geometry" />
         </mxCell>
-        <mxCell id="raw" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Bronze / Raw" vertex="1">
+        <mxCell id="raw" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Bronze / Raw Landing" vertex="1">
           <mxGeometry height="58" width="140" x="665" y="375" as="geometry" />
         </mxCell>
         <mxCell id="standard" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Silver / Staging &amp; Conformed" vertex="1">
           <mxGeometry height="58" width="140" x="665" y="505" as="geometry" />
         </mxCell>
-        <mxCell id="curated" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Gold / Data Access Layer (DAL)" vertex="1">
+        <mxCell id="curated" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Gold / Data Access Marts" vertex="1">
           <mxGeometry height="58" width="140" x="665" y="635" as="geometry" />
         </mxCell>
-        <mxCell id="products" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Governed Data Products&lt;br&gt;&lt;b&gt;(Apache Iceberg format)&lt;/b&gt;" vertex="1">
+        <mxCell id="iceberg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF8EE;strokeColor=#16A34A;fontColor=#14532D;" value="Apache Iceberg Storage&lt;br&gt;&lt;b&gt;(Open Lakehouse Format)&lt;/b&gt;" vertex="1">
           <mxGeometry height="58" width="140" x="665" y="745" as="geometry" />
         </mxCell>
-        <mxCell id="native" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Streams / Tasks /&lt;br&gt;Dynamic Tables" vertex="1">
+        <mxCell id="native" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Streams &amp; Dynamic Tables&lt;br&gt;&lt;b&gt;(Near-Real-Time)&lt;/b&gt;" vertex="1">
           <mxGeometry height="58" width="140" x="860" y="375" as="geometry" />
         </mxCell>
-        <mxCell id="dbt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="dbt Orchestration Engine&lt;br&gt;&lt;b&gt;(SQL Compilation &amp; Pushdown)&lt;/b&gt;" vertex="1">
-          <mxGeometry height="70" width="140" x="860" y="490" as="geometry" />
+        <mxCell id="dbt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="dbt Pipeline Orchestrator&lt;br&gt;&lt;b&gt;(SQL model pushdown)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="58" width="140" x="860" y="505" as="geometry" />
         </mxCell>
-        <mxCell id="calc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Calculation Services" vertex="1">
-          <mxGeometry height="58" width="140" x="860" y="690" as="geometry" />
+        <mxCell id="snowpark" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EAFE;strokeColor=#9333EA;fontColor=#581C87;" value="Snowpark Compute&lt;br&gt;&lt;b&gt;(Python / Calc Services)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="58" width="140" x="860" y="635" as="geometry" />
         </mxCell>
-        <mxCell id="semantic" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Semantic &amp; Metrics Layer" vertex="1">
+        <mxCell id="semantic" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Semantic &amp; Metric Store" vertex="1">
           <mxGeometry height="58" width="140" x="1055" y="350" as="geometry" />
         </mxCell>
-        <mxCell id="cortex" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Snowflake Cortex AI" vertex="1">
+        <mxCell id="cortex" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Snowflake Cortex AI &amp; Search" vertex="1">
           <mxGeometry height="58" width="140" x="1055" y="470" as="geometry" />
         </mxCell>
-        <mxCell id="sharing" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Secure Sharing /&lt;br&gt;Marketplace /&lt;br&gt;&lt;b&gt;Apache Iceberg Catalog&lt;/b&gt;" vertex="1">
+        <mxCell id="sharing" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDEAF3;strokeColor=#DB2777;fontColor=#831843;" value="Secure Sharing &amp; Native Apps" vertex="1">
           <mxGeometry height="58" width="140" x="1055" y="590" as="geometry" />
         </mxCell>
         <mxCell id="analytics" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E7F7FC;strokeColor=#0284C7;fontColor=#0C4A6E;" value="&lt;b&gt;Analytics &amp; BI&lt;/b&gt;&lt;br&gt;&lt;br&gt;Reporting &amp; BI&lt;br&gt;Business Users" vertex="1">
@@ -137,19 +137,19 @@
         <mxCell id="e10" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="curated">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e11" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="calc">
+        <mxCell id="e11" edge="1" parent="1" source="standard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="snowpark">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e12" edge="1" parent="1" source="calc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="curated">
+        <mxCell id="e12" edge="1" parent="1" source="snowpark" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="curated">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e13" edge="1" parent="1" source="curated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="products">
+        <mxCell id="e13" edge="1" parent="1" source="curated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="iceberg">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e14" edge="1" parent="1" source="curated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="semantic">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e15" edge="1" parent="1" source="products" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="sharing">
+        <mxCell id="e15" edge="1" parent="1" source="iceberg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="sharing">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e16" edge="1" parent="1" source="semantic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;endArrow=block;endFill=1;" target="cortex">
